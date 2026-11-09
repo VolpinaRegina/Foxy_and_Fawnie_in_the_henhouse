@@ -1,6 +1,7 @@
-# Foxy_and_Fawnie_in_the_henhouse
-C2 Client and Server 
+# Foxy and Fawnie in the henhouse
 
+
+## Usage example of the client:
 Startup and login:
 <img width="1919" height="709" alt="Screenshot 2026-11-09 130633" src="https://github.com/user-attachments/assets/b409d87d-eabe-48e1-bfd1-f1230a40ddc5" />
 
@@ -25,4 +26,20 @@ Upload malicius code on victim machine:
 Execute UAC bypass module:
 <img width="1919" height="474" alt="Screenshot 2026-11-09 134006" src="https://github.com/user-attachments/assets/5f4653fa-55a9-405a-825f-bf9278f283a0" />
 <img width="1919" height="72" alt="Screenshot 2026-11-09 134059" src="https://github.com/user-attachments/assets/5672cf0d-d197-4522-a379-bd711dd8bb87" />
+
+
+
+## Setup of the server:
+Start the server:
+```bash
+python Henhouse.py
+```
+
+Credentials can be found in Data/creds.json and can be crafted like this:
+```JSON
+{
+  "[username]":"[MD5 HASH]",
+  "fawnie":"d8578edf8458ce06fbc5bb76a58c5ca4"
+}
+```
 
