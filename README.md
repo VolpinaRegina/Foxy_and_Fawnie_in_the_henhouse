@@ -63,9 +63,11 @@ Execute UAC bypass module:
 
 ### Setup of the server
 Start the server:
-```bash
-python Henhouse.py
-```
+<img width="3839" height="676" alt="Screenshot 2026-11-10 143535" src="https://github.com/user-attachments/assets/14b68d07-b49f-433a-84bc-9542d546c1ae" />
+
+Start server with SSL:
+<img width="3838" height="677" alt="Screenshot 2026-11-10 143711" src="https://github.com/user-attachments/assets/197c93d6-d6b6-4238-b50c-38ae082b1a8b" />
+
 
 Credentials can be found in Data/creds.json and can be set like this:
 ```JSON
