@@ -66,9 +66,6 @@ Execute UAC bypass module:
 
 ### Setup of the server
 Start the server:
-<img width="3839" height="676" alt="Screenshot 2026-11-10 143535" src="https://github.com/user-attachments/assets/14b68d07-b49f-433a-84bc-9542d546c1ae" />
-
-Start server with SSL:
 ```
 python Henhouse.py --host [specific IP or 0.0.0.0 for all] --port [PORT] -c [path of the certificate, optional] -k [path of the private key, optional]
 ```
