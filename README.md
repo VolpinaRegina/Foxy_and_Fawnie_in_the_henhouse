@@ -132,6 +132,11 @@ Output data to the henhouse:
 ```JSON
 {"type": "upload", "data": {"fname": "[Filename]", "content":"[Base64 encoded data]"}}
 ```
+HTTP/s requests must be sent with two headers:
+```
+User-Agent: [Chicken name]
+CID: [Chicken ID, typically a 15 chars long uppercase alphanumeric string (it's cooler)]
+```
 
 ---
 ### End note
