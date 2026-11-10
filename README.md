@@ -14,20 +14,22 @@ Foxy and Fawnie (which is the client) enter the henhouse (which is the server) a
 - Modules are a set of instructions that are sequentially sent to the specified chicken to automate some tasks (e.g. UAC bypass via FodHelper).
 
 ### File structure
-Client
+
 ```
-|-FoxyAndFawnie.py
-|-Modules/
-|    |-...
-|-Downloads/
-     |-...
+Client
+  |-FoxyAndFawnie.py
+  |-Modules/
+  |    |-...
+  |-Downloads/
+       |-...
 ```
 
-Server:
+
 ```
-|-Henhouse.py
-|-Data/
-    |-Creds.json
+Server
+  |-Henhouse.py
+  |-Data/
+      |-Creds.json
 ```
 ---
 
