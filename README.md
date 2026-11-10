@@ -102,24 +102,36 @@ e.g. Say (for PowerShell)
   "Command":"say",
   "Description": "It echoes the thing you want it to say",
   "Args": [
-    [
-      "SAY",
-      "str",
-      "Thing to say"
-    ]
+    ["SAY","str","Thing to say"]
   ],
   "Instructions": [
-    {
-      "type": "command",
-      "data": "$a = \"{SAY}\""
-    },
-    {
-      "type": "command",
-      "data": "Write-Host $a"
-    }
+    {"type": "command", "data": "$a = \"{SAY}\""},
+    {"type": "command", "data": "Write-Host $a"}
   ]
 }
 ```
+
+### How the beacon should work
+Input data from the henhouse:
+```JSON
+[
+  {"type": "command", "data": "[Command to execute]"},
+  {"type": "instruction", "data": "[Instruction]"},
+  {"type": "download", "data": {"fname": "[Filename]"}},
+  {"type": "upload", "data": {"fname": "[Filename]", "content":"[Base64 encoded data]"}}
+]
+```
+Output data to the henhouse:
+```JSON
+{"type": "chicken_data", "data": "[Output of command]"}
+```
+```JSON
+{"type": "notification", "data": "[Notification text]"}
+```
+```JSON
+{"type": "upload", "data": {"fname": "[Filename]", "content":"[Base64 encoded data]"}}
+```
+
 ---
 ### End note
 Thank you my little Fawnie for the support!
