@@ -1,7 +1,35 @@
 # Foxy and Fawnie in the henhouse
 
+Foxy and Fawnie in the henhouse is a Command and Control [C2] client server, this project was made as a personal challenge after the completion of the RTO Certification of ZeroPointSecurity based on the usage of Cobalt Strike.
 
-## Usage example of the client:
+### How it works
+Foxy and Fawnie (which is the client) enter the henhouse (which is the server) and have fun playing with the chickens (which are the beacons) 
+
+### Important Note
+⚠️The chicken beacon used will not be published pubblicly for security reasons but it can still be crafted with the guide I'll provide below.
+
+### How to use
+- 
+
+## File structure
+Client
+```
+|-FoxyAndFawnie.py
+|-Modules/
+|    |-...
+|-Downloads/
+     |-...
+```
+
+Server:
+```
+|-Henhouse.py
+|-Data/
+    |-Creds.json
+```
+
+
+## Usage example of the client
 Startup and login:
 <img width="1919" height="709" alt="Screenshot 2026-11-09 130633" src="https://github.com/user-attachments/assets/b409d87d-eabe-48e1-bfd1-f1230a40ddc5" />
 
@@ -29,7 +57,7 @@ Execute UAC bypass module:
 
 
 
-## Setup of the server:
+## Setup of the server
 Start the server:
 ```bash
 python Henhouse.py
@@ -43,3 +71,4 @@ Credentials can be found in Data/creds.json and can be crafted like this:
 }
 ```
 
+Thank you Fawnie for the support!
