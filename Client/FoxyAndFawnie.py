@@ -31,6 +31,13 @@ print('\t[FoxyAndFawnie]')
 print('\n')
 
 
+if not os.path.exists("Downloads"):
+    os.makedirs("Downloads")
+
+if not os.path.exists("Modules"):
+    os.makedirs("Modules")
+
+
 def random_alpha_string(N: int) -> str:
     return ''.join(random.choices(string.ascii_lowercase + string.ascii_uppercase + string.digits, k=N))
 
@@ -309,7 +316,6 @@ while True:
         elif jdata['type'] == 'notification':
             print("\n"+jdata['data'],"\n"+fox.get_prompt(),end='')
         elif jdata['type'] == 'upload':
-            
             _f = open("Downloads/"+jdata['data']['fname'].split('/')[-1].split('\\')[-1], 'wb')
             _f.write(base64.b64decode(jdata['data']['content']))
             _f.close()
