@@ -5,13 +5,15 @@ Foxy and Fawnie in the henhouse is a Command and Control [C2] client server, thi
 ### How it works
 Foxy and Fawnie (which is the client) enter the henhouse (which is the server) and have fun playing with the chickens (which are the beacons) 
 
-### Important Note
-⚠️The chicken beacon used will not be published pubblicly for security reasons but it can still be crafted with the guide I'll provide below.
+### Notes
+- ⚠️The chicken beacon used will not be published pubblicly for security reasons as it is a real threat and I don't want it to be signaturized but it can still be crafted with the guide I'll provide below.
+- The modules provided are made for PowerShell
 
-### How to use
-- 
+### Infos
+- Put `@` before any commands to make instructions (e.g. `@help` to list available instructions).
+- Modules are a set of instructions that are sequentially sent to the specified chicken to automate some tasks (e.g. UAC bypass via FodHelper).
 
-## File structure
+### File structure
 Client
 ```
 |-FoxyAndFawnie.py
@@ -29,7 +31,7 @@ Server:
 ```
 
 
-## Usage example of the client
+### Usage example of the client
 Startup and login:
 <img width="1919" height="709" alt="Screenshot 2026-11-09 130633" src="https://github.com/user-attachments/assets/b409d87d-eabe-48e1-bfd1-f1230a40ddc5" />
 
@@ -57,13 +59,13 @@ Execute UAC bypass module:
 
 
 
-## Setup of the server
+### Setup of the server
 Start the server:
 ```bash
 python Henhouse.py
 ```
 
-Credentials can be found in Data/creds.json and can be crafted like this:
+Credentials can be found in Data/creds.json and can be set like this:
 ```JSON
 {
   "[username]":"[MD5 HASH]",
@@ -71,4 +73,53 @@ Credentials can be found in Data/creds.json and can be crafted like this:
 }
 ```
 
-Thank you Fawnie for the support!
+## Creating a module:
+Modules are made in JSON, they must be in the Modules directory to be loaded and have `.json` as the file extension, I love JSON
+```JSON
+{
+  "Name": "[Name of the module]",
+  "Command":"[Command that has to be put after #, no spaces]",
+  "Description": "[Syntetic description of the module]",
+  "Args": [
+    [
+      "[Argument name]",
+      "[Type]",
+      "[Syntetic description of the argument]"
+    ]
+  ],
+  "Instructions": [
+    {
+      "type": "[Type of instruction, e.g. command]",
+      "data": "{[Argument name between brackets]}"
+    }
+  ]
+}
+```
+e.g. Say (for PowerShell)
+```JSON
+{
+  "Name": "Say",
+  "Command":"say",
+  "Description": "It echoes the thing you want it to say",
+  "Args": [
+    [
+      "SAY",
+      "str",
+      "Thing to say"
+    ]
+  ],
+  "Instructions": [
+    {
+      "type": "command",
+      "data": "$a = \"{SAY}\""
+    },
+    {
+      "type": "command",
+      "data": "Write-Host $a"
+    }
+  ]
+}
+```
+---
+### End note
+Thank you my little Fawnie for the support!
