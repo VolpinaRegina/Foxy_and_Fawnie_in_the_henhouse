@@ -29,7 +29,7 @@ Server:
 |-Data/
     |-Creds.json
 ```
-
+---
 
 ### Usage example of the client
 Startup and login:
@@ -72,8 +72,9 @@ Credentials can be found in Data/creds.json and can be set like this:
   "fawnie":"d8578edf8458ce06fbc5bb76a58c5ca4"
 }
 ```
+---
 
-## Creating a module:
+### Creating a module:
 Modules are made in JSON, they must be in the Modules directory to be loaded and have `.json` as the file extension, I love JSON
 ```JSON
 {
@@ -110,7 +111,7 @@ e.g. Say (for PowerShell)
   ]
 }
 ```
-
+---
 ### How the beacon should work
 Input data from the henhouse:
 ```JSON
