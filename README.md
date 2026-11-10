@@ -35,6 +35,9 @@ Server
 
 ### Usage example of the client
 Startup and login:
+```
+python FoxyAndFawnie.py -u [URL of the henhouse]
+```
 <img width="1919" height="709" alt="Screenshot 2026-11-09 130633" src="https://github.com/user-attachments/assets/b409d87d-eabe-48e1-bfd1-f1230a40ddc5" />
 
 Help command:
@@ -66,8 +69,9 @@ Start the server:
 <img width="3839" height="676" alt="Screenshot 2026-11-10 143535" src="https://github.com/user-attachments/assets/14b68d07-b49f-433a-84bc-9542d546c1ae" />
 
 Start server with SSL:
-<img width="3838" height="677" alt="Screenshot 2026-11-10 143711" src="https://github.com/user-attachments/assets/197c93d6-d6b6-4238-b50c-38ae082b1a8b" />
-
+```
+python Henhouse.py --host [specific IP or 0.0.0.0 for all] --port [PORT] -c [path of the certificate, optional] -k [path of the private key, optional]
+```
 
 Credentials can be found in Data/creds.json and can be set like this:
 ```JSON
